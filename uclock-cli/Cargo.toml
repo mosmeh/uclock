@@ -1,0 +1,15 @@
+[package]
+name = "uclock-cli"
+version = "0.1.0"
+authors = ["mosm <airman515@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "uclock"
+path = "src/main.rs"
+
+[dependencies]
+futures = "0.3.15"
+structopt = "0.3.21"
+tokio = { version = "1.6.0", features = ["macros", "rt-multi-thread"] }
+uclock = { path = ".." }

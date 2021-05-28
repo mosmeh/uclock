@@ -1,0 +1,12 @@
+[package]
+name = "uclock-server"
+version = "0.1.0"
+authors = ["mosm <airman515@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+dotenv = "0.15.0"
+futures = "0.3.15"
+hyper = { version = "0.14.8", features = ["http1", "http2", "server", "runtime", "stream"] }
+tokio = { version = "1.6.0", features = ["macros", "rt-multi-thread"] }
+uclock = { path = ".." }
