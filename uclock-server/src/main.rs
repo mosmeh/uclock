@@ -9,10 +9,10 @@ use hyper::{
 use std::convert::Infallible;
 
 async fn handle(req: Request<Body>) -> Result<Response<Body>, Infallible> {
-    let color_str = req.uri().path().trim_start_matches("/");
+    let color_str = req.uri().path().trim_start_matches('/');
     let color = match color_str.parse::<Color>() {
         Ok(color) => color,
-        Err(_) if color_str == "" => Color::White,
+        Err(_) if color_str.is_empty() => Color::White,
         Err(e) => {
             return Ok(Response::builder()
                 .status(StatusCode::BAD_REQUEST)
